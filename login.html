@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<link type="text/css" rel="stylesheet" href="jquery-vegas/vegas.min.css">
+
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-vegas/vegas.min.js"></script>
+
+<title>FBI Hotspot &gt; Login...</title>
+<style>
+.container {
+	position: absolute; 
+	top: 45%;
+	overflow: hidden;
+    margin-top: -200px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.container h1 {
+	color: #000000;
+	font-weight: bold;
+}
+
+.copyright {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	
+	</script>
+$(endif)
+
+		<div class="container">
+			
+			<form class="form" name="login" action="$(link-login-only)" $(if chap-id) onSubmit="return doLogin()" $(endif) />
+				<h1>Wireless Access</h1>
+				<h2>PT. Fajar Benua Indopack</h2>
+				<br>
+				<input type="hidden" name="dst" value="$(link-orig)" />
+				<input type="hidden" name="popup" value="true" />
+				
+				<input name="username" type="text" placeholder="Username" value="$(username)">
+				<input name="password" type="password" placeholder="Password">
+				<button type="submit" id="login-button">Login</button>
+				<br>
+				$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
+			</form>
+			
+		</div>
+		
+	<div class="copyright">
+		<p>This is <strong>limited</strong> wireless access network. <u>Not for public access</u>. If you are a part of this network, you can log in to this network with valid user account and password.</p>
+          <p>If you have a problem to login, please contact your network administrator.</p>
+          <p>Please log on to use the internet hotspot service<br /><br /></p>
+			
+			&copy; 2013 - Provided by IT Division.<br><br>
+	</div>
+	
+    <div class="wrapper" style="opacity: 0.7;">
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+
+<!--
+<table width="600" height="550" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="50" colspan="2"><div align="center"><img src="img/cmi.jpg" width="250" height="50" /></div></td>
+  </tr>
+  <tr>
+    <td height="283" colspan="2"><div align="center"><img src="img/business-people.jpg" width="400" height="283" /></div></td>
+  </tr>
+  <tr>
+    <td width="300" height="147"><table width="290" height="140" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="290" height="40"><div align="center"><img src="img/login.jpg" width="290" height="40" /></div></td>
+      </tr>
+      <tr>
+        <td height="80" valign="top"><p>
+		<form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+						
+							<table width="190" border="0" align="center" cellspacing="0" style="background-color: #ffffff">
+								<tr><td width="62" align="right"><div align="left" class="style5">Login</div></td>
+										<td width="92"><input name="username" type="text" class="style5" style="width: 100px" value="$(username)"/></td>
+								</tr>
+								<tr>
+								  <td align="right"><div align="left" class="style9"><span class="style5">Password</span></div></td>
+										<td><input name="password" type="password" class="style5" style="width: 100px"/></td>
+								</tr>
+								<tr><td>&nbsp;</td>
+										<td><input type="submit" value="OK" /></td>
+								</tr>
+			  </table>
+			</form>
+		</td>
+      </tr>
+      <tr>
+        <td height="20" class="style1"><div align="center" class="style3">
+		$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
+		</div></td>
+      </tr>
+    </table></td>
+    <td width="300"><table width="290" height="240" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="290" height="40" colspan="2"><div align="center"><img src="img/info.jpg" width="290" height="40" /></div></td>
+      </tr>
+      <tr>
+        <td width="70" height="100"><div align="center"><img src="img/th_Dag.gif" width="50" height="50" /></div></td>
+        <td width="220" class="style5"><p>This is <strong>limited</strong> wireless access network. <u>Not for public access</u>. If you are a part of this network, you can log in to this network with valid user account and password.</p>
+          <p>If you have a problem to login, please contact your network administrator.</p>
+          <p><div class="notice" style="color: #c1c1c1; font-size: 9px">
+            <div class="notice" style="color: #c1c1c1; font-size: 9px">Please log on to use the internet hotspot service<br />
+              $(if trial == 'yes')Free trial available, <a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</div>
+          </div>
+          </div>
+          </p></td>
+      </tr>
+      <tr>
+        <td height="100">&nbsp;</td>
+        <td class="style5">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="70" colspan="2" valign="bottom"><div align="center" class="style10">&copy; 2013 - Provided by IT Division.</div></td>
+  </tr>
+</table>
+-->
+<script type="text/javascript">
+<!--
+	document.login.username.focus();
+//-->
+
+	$(function() {
+	
+		$('body').vegas({
+			overlay: 'jquery-vegas/overlays/07.png',
+			transition: 'random',
+			slides: [
+				{ src: 'jquery-vegas/images/0.jpg' },
+				{ src: 'jquery-vegas/images/1.jpg' }
+			]
+		});
+		
+	});
+	
+</script>
+</body>
+</html>
