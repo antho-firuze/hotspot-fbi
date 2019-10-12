@@ -1,41 +1,40 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>mikrotik hotspot > status</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<link type="text/css" rel="stylesheet" href="jquery-vegas/vegas.min.css">
+
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-vegas/vegas.min.js"></script>
+
+<title>FBI Hotspot &gt; Login...</title>
 $(if refresh-timeout)
 <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
 $(endif)
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="-1">
-<style type="text/css">
-<!--
-textarea,input,select {
-	background-color: #FDFBFB;
-	border: 1px #BBBBBB solid;
-	padding: 2px;
-	margin: 1px;
-	font-size: 14px;
-	color: #808080;
+<style>
+.container {
+	position: absolute; 
+	top: 45%;
+	overflow: hidden;
+    margin-top: -200px;
+    width: 100%;
+    max-width: 100%;
 }
 
-.tabula{
- 
-border-width: 1px; 
-border-collapse: collapse; 
-border-color: #c1c1c1; 
-background-color: transparent;
-font-family: verdana;
-font-size: 11px;
+.container h1 {
+	color: #000000;
+	font-weight: bold;
 }
 
-body{ color: #737373; font-size: 12px; font-family: verdana; }
+.copyright {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+}
 
-a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
-a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
-img {border: none;}
-td { font-size: 12px; padding: 4px;}
-
--->
 </style>
 <script language="JavaScript">
 <!--
@@ -63,42 +62,79 @@ $(if advert-pending == 'yes')
 	onLoad="openAdvert()"
 $(endif)
 >
-<table width="100%" height="100%">
 
-<tr>
-<td align="center" valign="middle">
-<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
-<table border="1" class="tabula">
-$(if login-by == 'trial')
-	<br><div style="text-align: center;">Welcome trial user!</div><br>
-$(elif login-by != 'mac')
-	<br><div style="text-align: center;">Welcome $(username)!</div><br>
-$(endif)
-	<tr><td align="right">IP address:</td><td>$(ip)</td></tr>
-	<tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
-$(if session-time-left)
-	<tr><td align="right">connected / left:</td><td>$(uptime) / $(session-time-left)</td></tr>
-$(else)
-	<tr><td align="right">connected:</td><td>$(uptime)</td></tr>
-$(endif)
-$(if blocked == 'yes')
-	<tr><td align="right">status:</td><td><div style="color: #FF8080">
-<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
-$(elif refresh-timeout)
-	<tr><td align="right">status refresh:</td><td>$(refresh-timeout)</td>
-$(endif)
+	<div class="container">
+		<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+			<table border="1" class="table table-bordered table-striped text-center" style="margin:auto">
+			$(if login-by == 'trial')
+				<br><div style="text-align: center;">Welcome trial user!</div><br>
+			$(elif login-by != 'mac')
+				<br><div style="text-align: center;">Welcome $(username)!</div><br>
+			$(endif)
+				<tr><td align="right">IP address:</td><td>$(ip)</td></tr>
+				<tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+			$(if session-time-left)
+				<tr><td align="right">connected / left:</td><td>$(uptime) / $(session-time-left)</td></tr>
+			$(else)
+				<tr><td align="right">connected:</td><td>$(uptime)</td></tr>
+			$(endif)
+			$(if blocked == 'yes')
+				<tr><td align="right">status:</td><td><div style="color: #FF8080">
+			<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+			$(elif refresh-timeout)
+				<tr><td align="right">status refresh:</td><td>$(refresh-timeout)</td>
+			$(endif)
 
-</table>
-$(if login-by-mac != 'yes')
-<br>
-<!-- user manager link
-<button onclick="document.location='http://$(hostname)/user?subs='">status</button>
-<!-- end of user manager link -->
-<input type="submit" value="log off">
-$(endif)
-</form>
+			</table>
+			$(if login-by-mac != 'yes')
+			<br>
+			<!-- user manager link
+			<button onclick="document.location='http://$(hostname)/user?subs='">status</button>
+			end of user manager link -->
+			<input type="submit" value="log off">
+			$(endif)
+		</form>
+	</div>
+		
+	<div class="copyright">
+		<p>This is <strong>limited</strong> wireless access network. <u>Not for public access</u>. If you are a part of this network, you can log in to this network with valid user account and password.</p>
+          <p>If you have a problem to login, please contact your network administrator.</p>
+          <p>Please log on to use the internet hotspot service<br /><br /></p>
+			
+			&copy; 2013 - Provided by IT Division.<br><br>
+	</div>
+	
+    <div class="wrapper" style="opacity: 0.7;">
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
 
-</td>
-</table>
+<script type="text/javascript">
+
+
+	$(function() {
+	
+		$('body').vegas({
+			overlay: 'jquery-vegas/overlays/07.png',
+			transition: 'random',
+			slides: [
+				{ src: 'jquery-vegas/images/0.jpg' },
+				{ src: 'jquery-vegas/images/1.jpg' }
+			]
+		});
+		
+	});
+	
+</script>
 </body>
 </html>
